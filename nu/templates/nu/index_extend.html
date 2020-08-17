@@ -1,0 +1,24 @@
+{% extends 'nu/index.html' %}
+
+{% block content %}
+
+
+    {% for el in courses %}
+        <tr>
+            <th>{{el.name}}</th>
+            <th>{{el.teacher.name}}</th>
+            <th>
+                {% for student in el.students.all %}
+
+                    <p> {{student.name}} </p>
+
+                {% endfor %}
+
+            </th>
+        </tr>
+    {% endfor %}
+
+
+
+
+{% endblock %}
